@@ -1,0 +1,228 @@
+/* Stile generale della pagina */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Titolo */
+h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Contenitore del form */
+form {
+    background-color: #ffffff;
+    padding: 30px 40px 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Ho allargato il form per far spazio alla disposizione in due colonne */
+    max-width: 550px;
+    width: 100%;
+}
+
+/* CREAZIONE DELLA GRIGLIA PER INCOLONNARE GLI INPUT */
+.form-group {
+    display: grid;
+    /* Prima colonna (etichette) 120px, Seconda colonna (input) prende lo spazio restante (1fr) */
+    grid-template-columns: 120px 1fr;
+    gap: 15px;
+    /* Spazio tra l'etichetta e l'input */
+    align-items: center;
+    /* Centra verticalmente il testo con l'input */
+    margin-bottom: 20px;
+}
+
+/* Stile per le etichette principali (colonna di sinistra) */
+.form-group>label {
+    text-align: right;
+    /* Allinea il testo a destra, vicino alla colonna degli input */
+    font-weight: 600;
+    color: #34495e;
+    margin: 0;
+}
+
+/* Stile dei campi di testo, numeri e menu a tendina (colonna di destra) */
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 15px;
+    transition: border-color 0.3s;
+}
+
+/* Effetto quando si clicca sui campi */
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Stile per i Radio Button */
+.radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 15px;
+    /* Spazio tra i vari pallini */
+    align-items: center;
+}
+
+/* Etichette dei bottoni radio (sovrascrive lo stile della colonna di sinistra) */
+.radio-group label {
+    font-weight: 400;
+    cursor: pointer;
+    margin: 0;
+}
+
+.radio-group input[type="radio"] {
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Stile per i bottoni */
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    /* Allinea i bottoni perfettamente sotto la colonna degli input (120px colonna sx + 15px gap) */
+    margin-left: 135px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    flex: 1;
+    /* I bottoni si dividono lo spazio a metà */
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+/* Bottone Salva */
+input[type="submit"] {
+    background-color: #2ecc71;
+    color: white;
+}
+
+input[type="submit"]:hover {
+    background-color: #27ae60;
+}
+
+/* Bottone Reset */
+input[type="reset"] {
+    background-color: #e74c3c;
+    color: white;
+}
+
+input[type="reset"]:hover {
+    background-color: #c0392b;
+}
+
+/* Effetto click bottoni */
+input[type="submit"]:active,
+input[type="reset"]:active {
+    transform: scale(0.98);
+}
+
+table {
+    width: 100%;
+    max-width: 800px;
+    /* Più larga del form per ospitare i dati */
+    margin: 40px auto;
+    /* Centrata orizzontalmente con spazio sopra e sotto */
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    /* Fondamentale per far funzionare i bordi arrotondati con l'header */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Stessa ombra del form */
+}
+
+/* Intestazione della tabella */
+thead {
+    background-color: #2c3e50;
+    /* Riprende il colore del titolo h1 */
+    color: #ffffff;
+}
+
+th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+/* Celle del corpo tabella */
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eeeeee;
+    color: #333;
+    font-size: 15px;
+}
+
+/* Effetto Zebra (colore di sfondo per le righe pari) */
+tbody tr:nth-child(even) {
+    background-color: #f8fbfb;
+}
+
+/* Rimuove la linea di demarcazione dall'ultima riga */
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Effetto Hover (quando passi il mouse su una riga) */
+tbody tr:hover {
+    background-color: #eef2f2;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Stile per i badge dello "Stato Ordine" (Opzionale ma molto bello) */
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    display: inline-block;
+}
+
+/* Colori in base allo stato */
+.status-corso {
+    background-color: #f39c12;
+}
+
+/* Arancione */
+.status-completato {
+    background-color: #2ecc71;
+}
+
+/* Verde */
+.status-annullato {
+    background-color: #e74c3c;
+}
+
+/* Rosso */
+.status-spedito {
+    background-color: #3498db;
+}
+
+/* Blu */
